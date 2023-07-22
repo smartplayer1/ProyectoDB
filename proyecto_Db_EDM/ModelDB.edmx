@@ -1,0 +1,1406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelDBStoreContainer">
+    <EntitySet Name="Articulos" EntityType="ModelDB.Store.Articulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UnidadMedidad" EntityType="ModelDB.Store.UnidadMedidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="ModelDB.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="ModelDB.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Presentacion" EntityType="ModelDB.Store.Presentacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Factura" EntityType="ModelDB.Store.Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empleados" EntityType="ModelDB.Store.Empleados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BodegaArticulo" EntityType="ModelDB.Store.BodegaArticulo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proveedor" EntityType="ModelDB.Store.Proveedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cargo" EntityType="ModelDB.Store.Cargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FacturaLineas" EntityType="ModelDB.Store.FacturaLineas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormaPago" EntityType="ModelDB.Store.FormaPago" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bodega" EntityType="ModelDB.Store.Bodega" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Minicipio" EntityType="ModelDB.Store.Minicipio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Departamento" EntityType="ModelDB.Store.Departamento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Recibo" EntityType="ModelDB.Store.Recibo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sexo" EntityType="ModelDB.Store.Sexo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="ModelDB.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BodegaArticuloProveedor" Association="ModelDB.Store.BodegaArticuloProveedor">
+      <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosBodegaArticulo" Association="ModelDB.Store.ArticulosBodegaArticulo">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosUnidadMedidad" Association="ModelDB.Store.ArticulosUnidadMedidad">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="UnidadMedidad" EntitySet="UnidadMedidad" />
+    </AssociationSet>
+    <AssociationSet Name="CategoriaArticulos" Association="ModelDB.Store.CategoriaArticulos">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="PresentacionArticulos" Association="ModelDB.Store.PresentacionArticulos">
+      <End Role="Presentacion" EntitySet="Presentacion" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="ClientesFactura" Association="ModelDB.Store.ClientesFactura">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadosFactura" Association="ModelDB.Store.EmpleadosFactura">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="CargoEmpleados" Association="ModelDB.Store.CargoEmpleados">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosFacturaLineas" Association="ModelDB.Store.ArticulosFacturaLineas">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="FacturaLineas" EntitySet="FacturaLineas" />
+    </AssociationSet>
+    <AssociationSet Name="FacturaFacturaLineas" Association="ModelDB.Store.FacturaFacturaLineas">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="FacturaLineas" EntitySet="FacturaLineas" />
+    </AssociationSet>
+    <AssociationSet Name="FormaPagoFactura" Association="ModelDB.Store.FormaPagoFactura">
+      <End Role="FormaPago" EntitySet="FormaPago" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="BodegaBodegaArticulo" Association="ModelDB.Store.BodegaBodegaArticulo">
+      <End Role="Bodega" EntitySet="Bodega" />
+      <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+    </AssociationSet>
+    <AssociationSet Name="FacturaRecibo" Association="ModelDB.Store.FacturaRecibo">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Recibo" EntitySet="Recibo" />
+    </AssociationSet>
+    <AssociationSet Name="MinicipioClientes" Association="ModelDB.Store.MinicipioClientes">
+      <End Role="Minicipio" EntitySet="Minicipio" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="DepartamentoMinicipio" Association="ModelDB.Store.DepartamentoMinicipio">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Minicipio" EntitySet="Minicipio" />
+    </AssociationSet>
+    <AssociationSet Name="SexoEmpleados" Association="ModelDB.Store.SexoEmpleados">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="SexoClientes" Association="ModelDB.Store.SexoClientes">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articulos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
+    <Property Name="Medida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="CategoriaId" Type="int" Nullable="false" />
+    <Property Name="PresentacionId" Type="int" Nullable="false" />
+    <Property Name="UnidadMedidad_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnidadMedidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Medida" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cedula" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificaion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="MinicipioId" Type="int" Nullable="false" />
+    <Property Name="DepartamentoId" Type="int" Nullable="false" />
+    <Property Name="SexoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Presentacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoFactura" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="IVA" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Descuento" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="SubTotal" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Saldo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="ClientesId" Type="int" Nullable="false" />
+    <Property Name="EmpleadosId" Type="int" Nullable="false" />
+    <Property Name="FormaPagoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cedula" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INSS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salario" Type="float" Nullable="false" />
+    <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="true" />
+    <Property Name="FechaBaja" Type="datetime" Nullable="true" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="CargoId" Type="int" Nullable="false" />
+    <Property Name="SexoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BodegaArticulo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Costo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Existencia" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ArticulosId" Type="int" Nullable="false" />
+    <Property Name="BodegaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contacto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="BodegaArticuloId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FacturaLineas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Costo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ArticulosId" Type="int" Nullable="false" />
+    <Property Name="FacturaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormaPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dias" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bodega">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="tinyint" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaUsuario" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Minicipio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DepartamentoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recibo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Norecibo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaRecibo" Type="datetime" Nullable="false" />
+    <Property Name="Efectivo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Cheque" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Deposito" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="MontoIR" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="NoIR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MontoIMI" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="NoIMI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="FacturaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <Association Name="BodegaArticuloProveedor">
+    <End Role="BodegaArticulo" Type="ModelDB.Store.BodegaArticulo" Multiplicity="1" />
+    <End Role="Proveedor" Type="ModelDB.Store.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BodegaArticulo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="BodegaArticuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosBodegaArticulo">
+    <End Role="Articulos" Type="ModelDB.Store.Articulos" Multiplicity="1" />
+    <End Role="BodegaArticulo" Type="ModelDB.Store.BodegaArticulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BodegaArticulo">
+        <PropertyRef Name="ArticulosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosUnidadMedidad">
+    <End Role="Articulos" Type="ModelDB.Store.Articulos" Multiplicity="*" />
+    <End Role="UnidadMedidad" Type="ModelDB.Store.UnidadMedidad" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadMedidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="UnidadMedidad_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoriaArticulos">
+    <End Role="Categoria" Type="ModelDB.Store.Categoria" Multiplicity="1" />
+    <End Role="Articulos" Type="ModelDB.Store.Articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PresentacionArticulos">
+    <End Role="Presentacion" Type="ModelDB.Store.Presentacion" Multiplicity="1" />
+    <End Role="Articulos" Type="ModelDB.Store.Articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presentacion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="PresentacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientesFactura">
+    <End Role="Clientes" Type="ModelDB.Store.Clientes" Multiplicity="1" />
+    <End Role="Factura" Type="ModelDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="ClientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpleadosFactura">
+    <End Role="Empleados" Type="ModelDB.Store.Empleados" Multiplicity="1" />
+    <End Role="Factura" Type="ModelDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="EmpleadosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CargoEmpleados">
+    <End Role="Cargo" Type="ModelDB.Store.Cargo" Multiplicity="1" />
+    <End Role="Empleados" Type="ModelDB.Store.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="CargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosFacturaLineas">
+    <End Role="Articulos" Type="ModelDB.Store.Articulos" Multiplicity="1" />
+    <End Role="FacturaLineas" Type="ModelDB.Store.FacturaLineas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FacturaLineas">
+        <PropertyRef Name="ArticulosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FacturaFacturaLineas">
+    <End Role="Factura" Type="ModelDB.Store.Factura" Multiplicity="1" />
+    <End Role="FacturaLineas" Type="ModelDB.Store.FacturaLineas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FacturaLineas">
+        <PropertyRef Name="FacturaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FormaPagoFactura">
+    <End Role="FormaPago" Type="ModelDB.Store.FormaPago" Multiplicity="1" />
+    <End Role="Factura" Type="ModelDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FormaPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="FormaPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BodegaBodegaArticulo">
+    <End Role="Bodega" Type="ModelDB.Store.Bodega" Multiplicity="1" />
+    <End Role="BodegaArticulo" Type="ModelDB.Store.BodegaArticulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bodega">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BodegaArticulo">
+        <PropertyRef Name="BodegaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FacturaRecibo">
+    <End Role="Factura" Type="ModelDB.Store.Factura" Multiplicity="1" />
+    <End Role="Recibo" Type="ModelDB.Store.Recibo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recibo">
+        <PropertyRef Name="FacturaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MinicipioClientes">
+    <End Role="Minicipio" Type="ModelDB.Store.Minicipio" Multiplicity="1" />
+    <End Role="Clientes" Type="ModelDB.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Minicipio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="MinicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartamentoMinicipio">
+    <End Role="Departamento" Type="ModelDB.Store.Departamento" Multiplicity="1" />
+    <End Role="Minicipio" Type="ModelDB.Store.Minicipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Minicipio">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SexoEmpleados">
+    <End Role="Sexo" Type="ModelDB.Store.Sexo" Multiplicity="1" />
+    <End Role="Empleados" Type="ModelDB.Store.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="SexoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SexoClientes">
+    <End Role="Sexo" Type="ModelDB.Store.Sexo" Multiplicity="1" />
+    <End Role="Clientes" Type="ModelDB.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="SexoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="true">
+        <EntityContainer Name="ModelDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Articulos" EntityType="ModelDB.Articulos" />
+          <EntitySet Name="UnidadMedidad" EntityType="ModelDB.UnidadMedidad" />
+          <EntitySet Name="Clientes" EntityType="ModelDB.Clientes" />
+          <EntitySet Name="Categoria" EntityType="ModelDB.Categoria" />
+          <EntitySet Name="Presentacion" EntityType="ModelDB.Presentacion" />
+          <EntitySet Name="Factura" EntityType="ModelDB.Factura" />
+          <EntitySet Name="Empleados" EntityType="ModelDB.Empleados" />
+          <EntitySet Name="BodegaArticulo" EntityType="ModelDB.BodegaArticulo" />
+          <EntitySet Name="Proveedor" EntityType="ModelDB.Proveedor" />
+          <AssociationSet Name="BodegaArticuloProveedor" Association="ModelDB.BodegaArticuloProveedor">
+            <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+            <End Role="Proveedor" EntitySet="Proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="ArticulosBodegaArticulo" Association="ModelDB.ArticulosBodegaArticulo">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+          </AssociationSet>
+          <AssociationSet Name="ArticulosUnidadMedidad" Association="ModelDB.ArticulosUnidadMedidad">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="UnidadMedidad" EntitySet="UnidadMedidad" />
+          </AssociationSet>
+          <AssociationSet Name="CategoriaArticulos" Association="ModelDB.CategoriaArticulos">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="PresentacionArticulos" Association="ModelDB.PresentacionArticulos">
+            <End Role="Presentacion" EntitySet="Presentacion" />
+            <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesFactura" Association="ModelDB.ClientesFactura">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosFactura" Association="ModelDB.EmpleadosFactura">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <EntitySet Name="Cargo" EntityType="ModelDB.Cargo" />
+          <AssociationSet Name="CargoEmpleados" Association="ModelDB.CargoEmpleados">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <EntitySet Name="FacturaLineas" EntityType="ModelDB.FacturaLineas" />
+          <AssociationSet Name="ArticulosFacturaLineas" Association="ModelDB.ArticulosFacturaLineas">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="FacturaLineas" EntitySet="FacturaLineas" />
+          </AssociationSet>
+          <AssociationSet Name="FacturaFacturaLineas" Association="ModelDB.FacturaFacturaLineas">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="FacturaLineas" EntitySet="FacturaLineas" />
+          </AssociationSet>
+          <EntitySet Name="FormaPago" EntityType="ModelDB.FormaPago" />
+          <AssociationSet Name="FormaPagoFactura" Association="ModelDB.FormaPagoFactura">
+            <End Role="FormaPago" EntitySet="FormaPago" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <EntitySet Name="Bodega" EntityType="ModelDB.Bodega" />
+          <AssociationSet Name="BodegaBodegaArticulo" Association="ModelDB.BodegaBodegaArticulo">
+            <End Role="Bodega" EntitySet="Bodega" />
+            <End Role="BodegaArticulo" EntitySet="BodegaArticulo" />
+          </AssociationSet>
+          <EntitySet Name="Minicipio" EntityType="ModelDB.Minicipio" />
+          <EntitySet Name="Departamento" EntityType="ModelDB.Departamento" />
+          <EntitySet Name="Recibo" EntityType="ModelDB.Recibo" />
+          <AssociationSet Name="FacturaRecibo" Association="ModelDB.FacturaRecibo">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="Recibo" EntitySet="Recibo" />
+          </AssociationSet>
+          <AssociationSet Name="MinicipioClientes" Association="ModelDB.MinicipioClientes">
+            <End Role="Minicipio" EntitySet="Minicipio" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="DepartamentoMinicipio" Association="ModelDB.DepartamentoMinicipio">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Minicipio" EntitySet="Minicipio" />
+          </AssociationSet>
+          <EntitySet Name="Sexo" EntityType="ModelDB.Sexo" />
+          <AssociationSet Name="SexoEmpleados" Association="ModelDB.SexoEmpleados">
+            <End Role="Sexo" EntitySet="Sexo" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="SexoClientes" Association="ModelDB.SexoClientes">
+            <End Role="Sexo" EntitySet="Sexo" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="ModelDB.sysdiagrams" />
+        </EntityContainer>
+        <EntityType Name="Articulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
+          <Property Name="Medida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="BodegaArticulo" Relationship="ModelDB.ArticulosBodegaArticulo" FromRole="Articulos" ToRole="BodegaArticulo" />
+          <NavigationProperty Name="UnidadMedidad" Relationship="ModelDB.ArticulosUnidadMedidad" FromRole="Articulos" ToRole="UnidadMedidad" />
+          <NavigationProperty Name="Categoria" Relationship="ModelDB.CategoriaArticulos" FromRole="Articulos" ToRole="Categoria" />
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Presentacion" Relationship="ModelDB.PresentacionArticulos" FromRole="Articulos" ToRole="Presentacion" />
+          <Property Name="PresentacionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FacturaLineas" Relationship="ModelDB.ArticulosFacturaLineas" FromRole="Articulos" ToRole="FacturaLineas" />
+        </EntityType>
+        <EntityType Name="UnidadMedidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Medida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Articulos" Relationship="ModelDB.ArticulosUnidadMedidad" FromRole="UnidadMedidad" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombres" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cedula" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificaion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Factura" Relationship="ModelDB.ClientesFactura" FromRole="Clientes" ToRole="Factura" />
+          <NavigationProperty Name="Minicipio" Relationship="ModelDB.MinicipioClientes" FromRole="Clientes" ToRole="Minicipio" />
+          <Property Name="MinicipioId" Type="Int32" Nullable="false" />
+          <Property Name="DepartamentoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sexo" Relationship="ModelDB.SexoClientes" FromRole="Clientes" ToRole="Sexo" />
+          <Property Name="SexoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Articulos" Relationship="ModelDB.CategoriaArticulos" FromRole="Categoria" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="Presentacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Articulos" Relationship="ModelDB.PresentacionArticulos" FromRole="Presentacion" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoFactura" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="IVA" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Clientes" Relationship="ModelDB.ClientesFactura" FromRole="Factura" ToRole="Clientes" />
+          <Property Name="ClientesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModelDB.EmpleadosFactura" FromRole="Factura" ToRole="Empleados" />
+          <Property Name="EmpleadosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FacturaLineas" Relationship="ModelDB.FacturaFacturaLineas" FromRole="Factura" ToRole="FacturaLineas" />
+          <NavigationProperty Name="FormaPago" Relationship="ModelDB.FormaPagoFactura" FromRole="Factura" ToRole="FormaPago" />
+          <Property Name="FormaPagoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Recibo" Relationship="ModelDB.FacturaRecibo" FromRole="Factura" ToRole="Recibo" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombres" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cedula" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="INSS" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Salario" Type="Double" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="FechaBaja" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Factura" Relationship="ModelDB.EmpleadosFactura" FromRole="Empleados" ToRole="Factura" />
+          <NavigationProperty Name="Cargo" Relationship="ModelDB.CargoEmpleados" FromRole="Empleados" ToRole="Cargo" />
+          <Property Name="CargoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sexo" Relationship="ModelDB.SexoEmpleados" FromRole="Empleados" ToRole="Sexo" />
+          <Property Name="SexoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BodegaArticulo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Costo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Existencia" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Proveedor" Relationship="ModelDB.BodegaArticuloProveedor" FromRole="BodegaArticulo" ToRole="Proveedor" />
+          <NavigationProperty Name="Articulos" Relationship="ModelDB.ArticulosBodegaArticulo" FromRole="BodegaArticulo" ToRole="Articulos" />
+          <Property Name="ArticulosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bodega" Relationship="ModelDB.BodegaBodegaArticulo" FromRole="BodegaArticulo" ToRole="Bodega" />
+          <Property Name="BodegaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Contacto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cargo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="BodegaArticulo" Relationship="ModelDB.BodegaArticuloProveedor" FromRole="Proveedor" ToRole="BodegaArticulo" />
+          <Property Name="BodegaArticuloId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BodegaArticuloProveedor">
+          <End Type="ModelDB.BodegaArticulo" Role="BodegaArticulo" Multiplicity="1" />
+          <End Type="ModelDB.Proveedor" Role="Proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BodegaArticulo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedor">
+              <PropertyRef Name="BodegaArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ArticulosBodegaArticulo">
+          <End Type="ModelDB.Articulos" Role="Articulos" Multiplicity="1" />
+          <End Type="ModelDB.BodegaArticulo" Role="BodegaArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BodegaArticulo">
+              <PropertyRef Name="ArticulosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ArticulosUnidadMedidad">
+          <End Type="ModelDB.Articulos" Role="Articulos" Multiplicity="*" />
+          <End Type="ModelDB.UnidadMedidad" Role="UnidadMedidad" Multiplicity="1" />
+        </Association>
+        <Association Name="CategoriaArticulos">
+          <End Type="ModelDB.Categoria" Role="Categoria" Multiplicity="1" />
+          <End Type="ModelDB.Articulos" Role="Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Articulos">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PresentacionArticulos">
+          <End Type="ModelDB.Presentacion" Role="Presentacion" Multiplicity="1" />
+          <End Type="ModelDB.Articulos" Role="Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Articulos">
+              <PropertyRef Name="PresentacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesFactura">
+          <End Type="ModelDB.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="ModelDB.Factura" Role="Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="ClientesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosFactura">
+          <End Type="ModelDB.Empleados" Role="Empleados" Multiplicity="1" />
+          <End Type="ModelDB.Factura" Role="Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="EmpleadosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModelDB.CargoEmpleados" FromRole="Cargo" ToRole="Empleados" />
+        </EntityType>
+        <Association Name="CargoEmpleados">
+          <End Type="ModelDB.Cargo" Role="Cargo" Multiplicity="1" />
+          <End Type="ModelDB.Empleados" Role="Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="CargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FacturaLineas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Articulos" Relationship="ModelDB.ArticulosFacturaLineas" FromRole="FacturaLineas" ToRole="Articulos" />
+          <Property Name="ArticulosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="ModelDB.FacturaFacturaLineas" FromRole="FacturaLineas" ToRole="Factura" />
+          <Property Name="FacturaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ArticulosFacturaLineas">
+          <End Type="ModelDB.Articulos" Role="Articulos" Multiplicity="1" />
+          <End Type="ModelDB.FacturaLineas" Role="FacturaLineas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacturaLineas">
+              <PropertyRef Name="ArticulosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FacturaFacturaLineas">
+          <End Type="ModelDB.Factura" Role="Factura" Multiplicity="1" />
+          <End Type="ModelDB.FacturaLineas" Role="FacturaLineas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factura">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacturaLineas">
+              <PropertyRef Name="FacturaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FormaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Dias" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="ModelDB.FormaPagoFactura" FromRole="FormaPago" ToRole="Factura" />
+        </EntityType>
+        <Association Name="FormaPagoFactura">
+          <End Type="ModelDB.FormaPago" Role="FormaPago" Multiplicity="1" />
+          <End Type="ModelDB.Factura" Role="Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaPago">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="FormaPagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Bodega">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Activo" Type="Byte" Nullable="false" />
+          <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaUsuario" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="BodegaArticulo" Relationship="ModelDB.BodegaBodegaArticulo" FromRole="Bodega" ToRole="BodegaArticulo" />
+        </EntityType>
+        <Association Name="BodegaBodegaArticulo">
+          <End Type="ModelDB.Bodega" Role="Bodega" Multiplicity="1" />
+          <End Type="ModelDB.BodegaArticulo" Role="BodegaArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bodega">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BodegaArticulo">
+              <PropertyRef Name="BodegaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Minicipio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Clientes" Relationship="ModelDB.MinicipioClientes" FromRole="Minicipio" ToRole="Clientes" />
+          <NavigationProperty Name="Departamento" Relationship="ModelDB.DepartamentoMinicipio" FromRole="Minicipio" ToRole="Departamento" />
+          <Property Name="DepartamentoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Minicipio" Relationship="ModelDB.DepartamentoMinicipio" FromRole="Departamento" ToRole="Minicipio" />
+        </EntityType>
+        <EntityType Name="Recibo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Norecibo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaRecibo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Efectivo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Cheque" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Deposito" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="MontoIR" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="NoIR" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MontoIMI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="NoIMI" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="ModelDB.FacturaRecibo" FromRole="Recibo" ToRole="Factura" />
+          <Property Name="FacturaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FacturaRecibo">
+          <End Type="ModelDB.Factura" Role="Factura" Multiplicity="1" />
+          <End Type="ModelDB.Recibo" Role="Recibo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factura">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Recibo">
+              <PropertyRef Name="FacturaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MinicipioClientes">
+          <End Type="ModelDB.Minicipio" Role="Minicipio" Multiplicity="1" />
+          <End Type="ModelDB.Clientes" Role="Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Minicipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="MinicipioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartamentoMinicipio">
+          <End Type="ModelDB.Departamento" Role="Departamento" Multiplicity="1" />
+          <End Type="ModelDB.Minicipio" Role="Minicipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Minicipio">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sexo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModelDB.SexoEmpleados" FromRole="Sexo" ToRole="Empleados" />
+          <NavigationProperty Name="Clientes" Relationship="ModelDB.SexoClientes" FromRole="Sexo" ToRole="Clientes" />
+        </EntityType>
+        <Association Name="SexoEmpleados">
+          <End Type="ModelDB.Sexo" Role="Sexo" Multiplicity="1" />
+          <End Type="ModelDB.Empleados" Role="Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sexo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="SexoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SexoClientes">
+          <End Type="ModelDB.Sexo" Role="Sexo" Multiplicity="1" />
+          <End Type="ModelDB.Clientes" Role="Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sexo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="SexoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="ConsultDepartamento_Result" >
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ConsulMunicipio_Result" >
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" />
+          <Property Type="Int32" Name="DepartamentoId" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelDBStoreContainer" CdmEntityContainer="ModelDBContainer">
+    <EntitySetMapping Name="Articulos">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Articulos)">
+        <MappingFragment StoreEntitySet="Articulos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Medida" ColumnName="Medida" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="PresentacionId" ColumnName="PresentacionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadMedidad">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.UnidadMedidad)">
+        <MappingFragment StoreEntitySet="UnidadMedidad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Medida" ColumnName="Medida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Clientes)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificaion" ColumnName="UsuarioModificaion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="MinicipioId" ColumnName="MinicipioId" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="SexoId" ColumnName="SexoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Categoria)">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Presentacion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Presentacion)">
+        <MappingFragment StoreEntitySet="Presentacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Factura)">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="ClientesId" ColumnName="ClientesId" />
+          <ScalarProperty Name="EmpleadosId" ColumnName="EmpleadosId" />
+          <ScalarProperty Name="FormaPagoId" ColumnName="FormaPagoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Empleados)">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="INSS" ColumnName="INSS" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+          <ScalarProperty Name="SexoId" ColumnName="SexoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BodegaArticulo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.BodegaArticulo)">
+        <MappingFragment StoreEntitySet="BodegaArticulo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="ArticulosId" ColumnName="ArticulosId" />
+          <ScalarProperty Name="BodegaId" ColumnName="BodegaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Proveedor)">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="BodegaArticuloId" ColumnName="BodegaArticuloId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Cargo)">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturaLineas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.FacturaLineas)">
+        <MappingFragment StoreEntitySet="FacturaLineas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="ArticulosId" ColumnName="ArticulosId" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaPago">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.FormaPago)">
+        <MappingFragment StoreEntitySet="FormaPago">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Dias" ColumnName="Dias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bodega">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Bodega)">
+        <MappingFragment StoreEntitySet="Bodega">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaUsuario" ColumnName="FechaUsuario" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Minicipio">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Minicipio)">
+        <MappingFragment StoreEntitySet="Minicipio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamento">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Departamento)">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recibo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Recibo)">
+        <MappingFragment StoreEntitySet="Recibo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Norecibo" ColumnName="Norecibo" />
+          <ScalarProperty Name="FechaRecibo" ColumnName="FechaRecibo" />
+          <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+          <ScalarProperty Name="Cheque" ColumnName="Cheque" />
+          <ScalarProperty Name="Deposito" ColumnName="Deposito" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="MontoIR" ColumnName="MontoIR" />
+          <ScalarProperty Name="NoIR" ColumnName="NoIR" />
+          <ScalarProperty Name="MontoIMI" ColumnName="MontoIMI" />
+          <ScalarProperty Name="NoIMI" ColumnName="NoIMI" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.Sexo)">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelDB.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ArticulosUnidadMedidad" TypeName="ModelDB.ArticulosUnidadMedidad" StoreEntitySet="Articulos">
+      <EndProperty Name="UnidadMedidad">
+        <ScalarProperty Name="Id" ColumnName="UnidadMedidad_Id" />
+      </EndProperty>
+      <EndProperty Name="Articulos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

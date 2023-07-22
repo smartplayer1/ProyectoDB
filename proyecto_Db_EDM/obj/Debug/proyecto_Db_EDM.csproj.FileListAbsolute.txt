@@ -1,0 +1,12 @@
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\proyecto_Db_EDM.dll.config
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\proyecto_Db_EDM.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\proyecto_Db_EDM.pdb
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\EntityFramework.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\EntityFramework.xml
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\obj\Debug\proyecto_Db_EDM.csproj.CoreCompileInputs.cache
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\obj\Debug\proyecto_Db_EDM.csproj.CopyComplete
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\obj\Debug\proyecto_Db_EDM.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\obj\Debug\proyecto_Db_EDM.pdb
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\obj\Debug\proyecto_Db_EDM.csproj.AssemblyReference.cache

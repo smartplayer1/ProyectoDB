@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="222a4948299549569a11b699778eb7ac" Name="Diagram1" ZoomLevel="49" >
+        <EntityTypeShape EntityType="ModelDB.Articulos" Width="1.875" PointX="4" PointY="7.375" />
+        <EntityTypeShape EntityType="ModelDB.UnidadMedidad" Width="1.5" PointX="4.125" PointY="13" />
+        <EntityTypeShape EntityType="ModelDB.Clientes" Width="2.25" PointX="9.625" PointY="2" />
+        <EntityTypeShape EntityType="ModelDB.Categoria" Width="1.5" PointX="9.25" PointY="13" />
+        <EntityTypeShape EntityType="ModelDB.Presentacion" Width="1.5" PointX="2.5" PointY="14.75" />
+        <EntityTypeShape EntityType="ModelDB.Factura" Width="2" PointX="8.125" PointY="7.125" />
+        <EntityTypeShape EntityType="ModelDB.Empleados" Width="2" PointX="17.75" PointY="7.375" />
+        <EntityTypeShape EntityType="ModelDB.BodegaArticulo" Width="1.5" PointX="0.5" PointY="6.75" />
+        <EntityTypeShape EntityType="ModelDB.Proveedor" Width="1.5" PointX="0.5" PointY="2.25" />
+        <AssociationConnector Association="ModelDB.BodegaArticuloProveedor" />
+        <AssociationConnector Association="ModelDB.ArticulosBodegaArticulo" />
+        <AssociationConnector Association="ModelDB.ArticulosUnidadMedidad" />
+        <AssociationConnector Association="ModelDB.CategoriaArticulos" />
+        <AssociationConnector Association="ModelDB.PresentacionArticulos" />
+        <AssociationConnector Association="ModelDB.ClientesFactura" />
+        <AssociationConnector Association="ModelDB.EmpleadosFactura" />
+        <EntityTypeShape EntityType="ModelDB.Cargo" Width="1.5" PointX="19.875" PointY="3" />
+        <AssociationConnector Association="ModelDB.CargoEmpleados" />
+        <EntityTypeShape EntityType="ModelDB.FacturaLineas" Width="1.5" PointX="5.5" PointY="3.625" />
+        <AssociationConnector Association="ModelDB.ArticulosFacturaLineas" />
+        <AssociationConnector Association="ModelDB.FacturaFacturaLineas" />
+        <EntityTypeShape EntityType="ModelDB.FormaPago" Width="1.5" PointX="15.625" PointY="11.125" />
+        <AssociationConnector Association="ModelDB.FormaPagoFactura" />
+        <EntityTypeShape EntityType="ModelDB.Bodega" Width="1.5" PointX="0.5" PointY="10.5" />
+        <AssociationConnector Association="ModelDB.BodegaBodegaArticulo" />
+        <EntityTypeShape EntityType="ModelDB.Minicipio" Width="1.5" PointX="13.25" PointY="0.5" />
+        <EntityTypeShape EntityType="ModelDB.Departamento" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelDB.Recibo" Width="1.5" PointX="12.75" PointY="5.25" />
+        <AssociationConnector Association="ModelDB.FacturaRecibo" />
+        <AssociationConnector Association="ModelDB.MinicipioClientes" />
+        <AssociationConnector Association="ModelDB.DepartamentoMinicipio" />
+        <EntityTypeShape EntityType="ModelDB.Sexo" Width="1.5" PointX="16.75" PointY="4.25" />
+        <AssociationConnector Association="ModelDB.SexoEmpleados" />
+        <AssociationConnector Association="ModelDB.SexoClientes" />
+        <EntityTypeShape EntityType="ModelDB.sysdiagrams" Width="1.5" PointX="3.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
