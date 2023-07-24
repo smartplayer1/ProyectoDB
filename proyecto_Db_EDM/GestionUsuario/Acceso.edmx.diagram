@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a5bd738b574470db198872f5fe8f11d" Name="Diagram1" >
+        <EntityTypeShape EntityType="Acceso.FuncionDeAcceso" Width="1.5" PointX="0.5" PointY="2.375" />
+        <EntityTypeShape EntityType="Acceso.FuncionAsignada" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="Acceso.Usuario" Width="1.5" PointX="5.625" PointY="2.625" />
+        <AssociationConnector Association="Acceso.FuncionDeAccesoFuncionAsignada" />
+        <AssociationConnector Association="Acceso.UsuarioFuncionAsignada" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

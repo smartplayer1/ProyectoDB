@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Proyecto_DB_DAO
+﻿namespace Proyecto_DB_DAO
 {
     public class Class1
     {

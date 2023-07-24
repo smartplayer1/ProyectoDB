@@ -1,0 +1,15 @@
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\Proyecto_DB_DAO.dll.config
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\Proyecto_DB_DAO.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\Proyecto_DB_DAO.pdb
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\EntityFramework.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\proyecto_Db_EDM.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\proyecto_Db_EDM.pdb
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\proyecto_Db_EDM.dll.config
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\EntityFramework.xml
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\obj\Debug\Proyecto_DB_DAO.csproj.AssemblyReference.cache
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\obj\Debug\Proyecto_DB_DAO.csproj.CoreCompileInputs.cache
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\obj\Debug\Proyecto_DB_DAO.csproj.CopyComplete
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\obj\Debug\Proyecto_DB_DAO.dll
+C:\Users\FRANCISCO\source\repos\Proyecto_DB\Proyecto_DB_DAO\obj\Debug\Proyecto_DB_DAO.pdb

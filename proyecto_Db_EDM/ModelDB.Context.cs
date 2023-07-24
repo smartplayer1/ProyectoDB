@@ -12,6 +12,8 @@ namespace proyecto_Db_EDM
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ModelDBContainer : DbContext
     {
@@ -43,5 +45,14 @@ namespace proyecto_Db_EDM
         public virtual DbSet<Recibo> Recibo { get; set; }
         public virtual DbSet<Sexo> Sexo { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+    
+        public virtual ObjectResult<Departamento_Result> sp_sel_Departamento(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Departamento_Result>("sp_sel_Departamento", idParameter);
+        }
     }
 }

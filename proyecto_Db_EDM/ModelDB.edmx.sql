@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/22/2023 11:41:13
+-- Date Created: 07/22/2023 14:55:40
 -- Generated from EDMX file: C:\Users\FRANCISCO\source\repos\Proyecto_DB\proyecto_Db_EDM\ModelDB.edmx
 -- --------------------------------------------------
 
@@ -17,56 +17,56 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_BodegaArticuloProveedor]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Proveedor] DROP CONSTRAINT [FK_BodegaArticuloProveedor];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosBodegaArticulo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BodegaArticulo] DROP CONSTRAINT [FK_ArticulosBodegaArticulo];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ArticulosUnidadMedidad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_ArticulosUnidadMedidad];
-GO
-IF OBJECT_ID(N'[dbo].[FK_CategoriaArticulos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_CategoriaArticulos];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PresentacionArticulos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_PresentacionArticulos];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ClientesFactura]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_ClientesFactura];
-GO
-IF OBJECT_ID(N'[dbo].[FK_EmpleadosFactura]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_EmpleadosFactura];
-GO
-IF OBJECT_ID(N'[dbo].[FK_CargoEmpleados]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Empleados] DROP CONSTRAINT [FK_CargoEmpleados];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosFacturaLineas]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FacturaLineas] DROP CONSTRAINT [FK_ArticulosFacturaLineas];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FacturaFacturaLineas]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FacturaLineas] DROP CONSTRAINT [FK_FacturaFacturaLineas];
+IF OBJECT_ID(N'[dbo].[FK_ArticulosUnidadMedidad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_ArticulosUnidadMedidad];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FormaPagoFactura]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_FormaPagoFactura];
+IF OBJECT_ID(N'[dbo].[FK_BodegaArticuloProveedor]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Proveedor] DROP CONSTRAINT [FK_BodegaArticuloProveedor];
 GO
 IF OBJECT_ID(N'[dbo].[FK_BodegaBodegaArticulo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BodegaArticulo] DROP CONSTRAINT [FK_BodegaBodegaArticulo];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FacturaRecibo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Recibo] DROP CONSTRAINT [FK_FacturaRecibo];
+IF OBJECT_ID(N'[dbo].[FK_CargoEmpleados]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Empleados] DROP CONSTRAINT [FK_CargoEmpleados];
 GO
-IF OBJECT_ID(N'[dbo].[FK_MinicipioClientes]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Clientes] DROP CONSTRAINT [FK_MinicipioClientes];
+IF OBJECT_ID(N'[dbo].[FK_CategoriaArticulos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_CategoriaArticulos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClientesFactura]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_ClientesFactura];
 GO
 IF OBJECT_ID(N'[dbo].[FK_DepartamentoMinicipio]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Minicipio] DROP CONSTRAINT [FK_DepartamentoMinicipio];
 GO
-IF OBJECT_ID(N'[dbo].[FK_SexoEmpleados]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Empleados] DROP CONSTRAINT [FK_SexoEmpleados];
+IF OBJECT_ID(N'[dbo].[FK_EmpleadosFactura]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_EmpleadosFactura];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FacturaFacturaLineas]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FacturaLineas] DROP CONSTRAINT [FK_FacturaFacturaLineas];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FacturaRecibo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Recibo] DROP CONSTRAINT [FK_FacturaRecibo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FormaPagoFactura]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_FormaPagoFactura];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MinicipioClientes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clientes] DROP CONSTRAINT [FK_MinicipioClientes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PresentacionArticulos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_PresentacionArticulos];
 GO
 IF OBJECT_ID(N'[dbo].[FK_SexoClientes]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Clientes] DROP CONSTRAINT [FK_SexoClientes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SexoEmpleados]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Empleados] DROP CONSTRAINT [FK_SexoEmpleados];
 GO
 
 -- --------------------------------------------------
@@ -76,32 +76,29 @@ GO
 IF OBJECT_ID(N'[dbo].[Articulos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Articulos];
 GO
-IF OBJECT_ID(N'[dbo].[UnidadMedidad]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UnidadMedidad];
-GO
-IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Clientes];
-GO
-IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Categoria];
-GO
-IF OBJECT_ID(N'[dbo].[Presentacion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Presentacion];
-GO
-IF OBJECT_ID(N'[dbo].[Factura]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Factura];
-GO
-IF OBJECT_ID(N'[dbo].[Empleados]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Empleados];
+IF OBJECT_ID(N'[dbo].[Bodega]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Bodega];
 GO
 IF OBJECT_ID(N'[dbo].[BodegaArticulo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[BodegaArticulo];
 GO
-IF OBJECT_ID(N'[dbo].[Proveedor]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Proveedor];
-GO
 IF OBJECT_ID(N'[dbo].[Cargo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Cargo];
+GO
+IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categoria];
+GO
+IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Clientes];
+GO
+IF OBJECT_ID(N'[dbo].[Departamento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Departamento];
+GO
+IF OBJECT_ID(N'[dbo].[Empleados]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Empleados];
+GO
+IF OBJECT_ID(N'[dbo].[Factura]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Factura];
 GO
 IF OBJECT_ID(N'[dbo].[FacturaLineas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FacturaLineas];
@@ -109,14 +106,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FormaPago]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FormaPago];
 GO
-IF OBJECT_ID(N'[dbo].[Bodega]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Bodega];
-GO
 IF OBJECT_ID(N'[dbo].[Minicipio]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Minicipio];
 GO
-IF OBJECT_ID(N'[dbo].[Departamento]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Departamento];
+IF OBJECT_ID(N'[dbo].[Presentacion]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Presentacion];
+GO
+IF OBJECT_ID(N'[dbo].[Proveedor]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Proveedor];
 GO
 IF OBJECT_ID(N'[dbo].[Recibo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Recibo];
@@ -126,6 +123,9 @@ IF OBJECT_ID(N'[dbo].[Sexo]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
     DROP TABLE [dbo].[sysdiagrams];
+GO
+IF OBJECT_ID(N'[dbo].[UnidadMedidad]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UnidadMedidad];
 GO
 
 -- --------------------------------------------------

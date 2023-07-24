@@ -7,14 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace proyecto_Db_EDM
+namespace proyecto_Db_EDM.GestionUsuario
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class ConsultDepartamento_Result
+    public partial class FuncionAsignada
     {
         public int Id { get; set; }
-        public string Codigo { get; set; }
-        public string Descripcion { get; set; }
+        public System.DateTime FechaVencimiento { get; set; }
+        public int FuncionDeAccesoId { get; set; }
+        public int UsuarioId { get; set; }
+    
+        public virtual FuncionDeAcceso FuncionDeAcceso { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

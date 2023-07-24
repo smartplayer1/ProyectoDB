@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace proyecto_Db_EDM
+﻿namespace proyecto_Db_EDM
 {
     public class Class1
     {

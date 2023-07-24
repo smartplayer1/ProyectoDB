@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Acceso.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AccesoStoreContainer">
+    <EntitySet Name="FuncionDeAcceso" EntityType="Acceso.Store.FuncionDeAcceso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FuncionAsignada" EntityType="Acceso.Store.FuncionAsignada" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="Acceso.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FuncionDeAccesoFuncionAsignada" Association="Acceso.Store.FuncionDeAccesoFuncionAsignada">
+      <End Role="FuncionDeAcceso" EntitySet="FuncionDeAcceso" />
+      <End Role="FuncionAsignada" EntitySet="FuncionAsignada" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioFuncionAsignada" Association="Acceso.Store.UsuarioFuncionAsignada">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="FuncionAsignada" EntitySet="FuncionAsignada" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FuncionDeAcceso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FuncionAsignada">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="FuncionDeAccesoId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDeUsuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClaveDeUsuario" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FuncionDeAccesoFuncionAsignada">
+    <End Role="FuncionDeAcceso" Type="Acceso.Store.FuncionDeAcceso" Multiplicity="1" />
+    <End Role="FuncionAsignada" Type="Acceso.Store.FuncionAsignada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FuncionDeAcceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="FuncionDeAccesoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioFuncionAsignada">
+    <End Role="Usuario" Type="Acceso.Store.Usuario" Multiplicity="1" />
+    <End Role="FuncionAsignada" Type="Acceso.Store.FuncionAsignada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Acceso" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AccesoContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FuncionDeAcceso" EntityType="Acceso.FuncionDeAcceso" />
+          <EntitySet Name="FuncionAsignada" EntityType="Acceso.FuncionAsignada" />
+          <EntitySet Name="Usuario" EntityType="Acceso.Usuario" />
+          <AssociationSet Name="FuncionDeAccesoFuncionAsignada" Association="Acceso.FuncionDeAccesoFuncionAsignada">
+            <End Role="FuncionDeAcceso" EntitySet="FuncionDeAcceso" />
+            <End Role="FuncionAsignada" EntitySet="FuncionAsignada" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioFuncionAsignada" Association="Acceso.UsuarioFuncionAsignada">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="FuncionAsignada" EntitySet="FuncionAsignada" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FuncionDeAcceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" />
+          <NavigationProperty Name="FuncionAsignada" Relationship="Acceso.FuncionDeAccesoFuncionAsignada" FromRole="FuncionDeAcceso" ToRole="FuncionAsignada" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FuncionAsignada">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="FuncionDeAcceso" Relationship="Acceso.FuncionDeAccesoFuncionAsignada" FromRole="FuncionAsignada" ToRole="FuncionDeAcceso" />
+          <Property Name="FuncionDeAccesoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Acceso.UsuarioFuncionAsignada" FromRole="FuncionAsignada" ToRole="Usuario" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDeUsuario" Type="String" Nullable="false" />
+          <Property Name="ClaveDeUsuario" Type="String" Nullable="false" />
+          <NavigationProperty Name="FuncionAsignada" Relationship="Acceso.UsuarioFuncionAsignada" FromRole="Usuario" ToRole="FuncionAsignada" />
+        </EntityType>
+        <Association Name="FuncionDeAccesoFuncionAsignada">
+          <End Type="Acceso.FuncionDeAcceso" Role="FuncionDeAcceso" Multiplicity="1" />
+          <End Type="Acceso.FuncionAsignada" Role="FuncionAsignada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FuncionDeAcceso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionAsignada">
+              <PropertyRef Name="FuncionDeAccesoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioFuncionAsignada">
+          <End Type="Acceso.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="Acceso.FuncionAsignada" Role="FuncionAsignada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionAsignada">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccesoStoreContainer" CdmEntityContainer="AccesoContainer">
+    <EntitySetMapping Name="FuncionDeAcceso">
+      <EntityTypeMapping TypeName="IsTypeOf(Acceso.FuncionDeAcceso)">
+        <MappingFragment StoreEntitySet="FuncionDeAcceso">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionAsignada">
+      <EntityTypeMapping TypeName="IsTypeOf(Acceso.FuncionAsignada)">
+        <MappingFragment StoreEntitySet="FuncionAsignada">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+          <ScalarProperty Name="FuncionDeAccesoId" ColumnName="FuncionDeAccesoId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(Acceso.Usuario)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+          <ScalarProperty Name="ClaveDeUsuario" ColumnName="ClaveDeUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

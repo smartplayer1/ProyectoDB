@@ -87,6 +87,9 @@
       <End Role="Clientes" EntitySet="Clientes" />
     </AssociationSet>
     <EntitySet Name="sysdiagrams" EntityType="ModelDB.sysdiagrams" />
+    <FunctionImport Name="sp_sel_Departamento" ReturnType="Collection(ModelDB.Departamento_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Articulos">
     <Key>
@@ -557,4 +560,9 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <ComplexType Name="Departamento_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Codigo" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+  </ComplexType>
 </Schema>
